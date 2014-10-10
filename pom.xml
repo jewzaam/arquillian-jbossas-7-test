@@ -3,7 +3,7 @@
     <groupId>org.jewzaam.arquillian.jbossas7</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <artifactId>jbossas7</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>Test app</name>
     <dependencyManagement>
         <dependencies>
@@ -46,11 +46,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jboss.arquillian.protocol</groupId>
-            <artifactId>arquillian-protocol-servlet</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.jboss.weld</groupId>
             <artifactId>weld-core</artifactId>
             <version>1.1.5.AS71.Final</version>
@@ -89,6 +84,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
             </plugin>
             <!-- download and unzip (unpack) jbossas 7 (eap 6) -->
+            <!--
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>2.8</version>
@@ -114,6 +110,7 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -122,7 +119,6 @@
                         <resource>
                             <directory>src/main/webapp/</directory>
                             <includes>
-                                <include>version.info</include>
                                 <include>WEB-INF/jboss-web.xml</include>
                             </includes>
                             <filtering>true</filtering>
