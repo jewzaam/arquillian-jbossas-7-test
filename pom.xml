@@ -57,6 +57,12 @@
             <artifactId>jboss-javaee-all-6.0</artifactId>
             <version>3.0.0.Final</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>xalan</artifactId>
+                    <groupId>xalan</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- this isn't the best dependency. need to find something better! -->
