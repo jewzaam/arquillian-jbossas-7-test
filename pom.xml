@@ -3,7 +3,7 @@
     <groupId>org.jewzaam.arquillian.jbossas7</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <artifactId>jbossas7</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>Test app</name>
     <dependencyManagement>
         <dependencies>
@@ -112,19 +112,10 @@
             </plugin>
             -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
                 <configuration>
-                    <webResources>
-                        <resource>
-                            <directory>src/main/webapp/</directory>
-                            <includes>
-                                <include>WEB-INF/jboss-web.xml</include>
-                            </includes>
-                            <filtering>true</filtering>
-                            <targetPath>.</targetPath>
-                        </resource>
-                    </webResources>
+                    <attachClasses>true</attachClasses>
                 </configuration>
             </plugin>
         </plugins>

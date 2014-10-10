@@ -31,7 +31,7 @@ public class BootstrapTest {
 //            archive.addAsLibrary(file);
 //        }
 
-        archive.addPackages(true, "org.jewzaam.arquillian.jbossas7.rest");
+        archive.addPackages(true, "org.jewzaam");
 
         return archive;
     }
