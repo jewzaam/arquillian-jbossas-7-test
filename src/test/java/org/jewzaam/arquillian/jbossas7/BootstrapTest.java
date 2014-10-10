@@ -6,6 +6,7 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 import org.jewzaam.arquillian.jbossas7.rest.RestResource;
 import org.junit.Assert;
 import org.junit.Test;
@@ -17,7 +18,7 @@ import java.io.File;
 public class BootstrapTest {
 
     @Deployment
-    public static WebArchive createTestArchive() {
+    public static WebArchive createDeployment() {
 //        File[] libs = Maven.resolver().loadPomFromFile("pom.xml").importRuntimeDependencies().resolve().withTransitivity().asFile();
 
         // create archive
