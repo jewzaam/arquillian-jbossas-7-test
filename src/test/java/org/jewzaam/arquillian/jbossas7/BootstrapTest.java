@@ -1,17 +1,16 @@
 package org.jewzaam.arquillian.jbossas7;
 
 import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.core.api.annotation.Inject;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 import org.jewzaam.arquillian.jbossas7.rest.RestResource;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import javax.inject.Inject;
 import java.io.File;
 
 @RunWith(Arquillian.class)
@@ -43,8 +42,7 @@ public class BootstrapTest {
     @Test
     public void emptyTest() {
         Assert.assertNotNull(restResource);
-        // yay, success.
-        String s = "";// for a breakpoint
-        s += "nmalik";
+
+        Assert.assertEquals("<body>HI!</body>", restResource.test());
     }
 }
